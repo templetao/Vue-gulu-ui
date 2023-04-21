@@ -9,8 +9,8 @@ import Topnav from '../components/Topnav.vue'
       <h1>轮子UI</h1>
       <h2>一个厉害的 UI 框架</h2>
       <p class="actions">
-        <a href="#">Github</a>
-        <a href="#">开始</a>
+        <a href="https://Github.com">Github</a>
+        <RouterLink to="/doc">开始</RouterLink>
       </p>
     </div>
   </div>
