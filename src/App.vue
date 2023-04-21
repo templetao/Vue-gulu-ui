@@ -1,15 +1,14 @@
 <script>
-import Tao from './components/Tao.vue'
-
 export default {
   name: 'App',
-  components: {
-    Tao
-  }
 }
 </script>
 
 <template>
   <div>hi</div>
-  <Tao />
+  <router-link to="/">tao</router-link>
+  |
+  <router-link to="/">tao2</router-link>
+  <hr/>
+  <router-view/>
 </template>
