@@ -3,7 +3,24 @@
 </template>
 
 <style lang="scss" scoped>
-span {
+$h: 22px;
+$h2: 18px;
+button {
+  height: $h;
+  width: $h*2;
+  border: none;
+  background: blue;
+  border-radius: calc($h / 2);
+  position: relative;
+}
 
+span {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: $h2;
+  width: $h2;
+  background: white;
+  border-radius: calc($h / 2);
 }
 </style>
