@@ -1,20 +1,18 @@
 <script lang='ts'>
 export default {
-  inheritAttrs: false,
-  props: {},
-  setup(props: any, context: any) {
-    const {size, ...rest} = props
-    return {}
+  props: {
+    theme: {
+      type: String,
+      default: 'button'
+    }
   }
 }
 </script>
 
 <template>
-  <div :size="size">
-    <button v-bind="rest">
-      <slot/>
-    </button>
-  </div>
+  <button class="gulu-button" :class="{[`theme-${theme}`]: theme}">
+    <slot/>
+  </button>
 </template>
 
 <style lang='scss' scoped>
