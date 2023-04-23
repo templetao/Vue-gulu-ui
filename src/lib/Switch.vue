@@ -14,13 +14,15 @@ export default {
 </script>
 
 <template>
-  <button @click="toggle" :class="{checked:value}"><span></span></button>
+  <button class="gulu-switch" @click="toggle" :class="{'gulu-checked':value}">
+    <span></span>
+  </button>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: 18px;
-button {
+.gulu-switch {
   height: $h;
   width: $h*2;
   border: none;
@@ -39,7 +41,7 @@ button {
     transition: all 250ms;
   }
 
-  &.checked {
+  &.gulu-checked {
     background: #50C878;
 
     > span {
@@ -57,7 +59,7 @@ button {
     }
   }
 
-  &.checked:active {
+  &.gulu-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;
