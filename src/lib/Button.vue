@@ -10,14 +10,19 @@ export default {
     size: {
       type: String,
       default: 'normal'
+    },
+    level: {
+      type: String,
+      default: 'normal'
     }
   },
   setup(props: any) {
-    const {theme, size} = props
+    const {theme, size, level} = props
     const classes = computed(() => {
       return {
         [`gulu-theme-${theme}`]: theme,
         [`gulu-size-${size}`]: size,
+        [`gulu-level-${level}`]: level,
       }
     })
     return {classes}
@@ -37,6 +42,8 @@ $border-color: #d9d9d9;
 $color: #333;
 $green: #50C878;
 $radius: 10px;
+$red: orangered;
+$white: white;
 .gulu-button {
   box-sizing: border-box;
   height: $h;
@@ -46,11 +53,12 @@ $radius: 10px;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
-  background: white;
+  background: $white;
   color: $color;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+  transition: background 250ms;
 
   & + & {
     margin-left: 8px;
@@ -85,7 +93,7 @@ $radius: 10px;
     color: inherit;
 
     &:hover, &:focus {
-      background: darken(white, 10%);;
+      background: darken($white, 10%);;
     }
   }
 
@@ -101,5 +109,42 @@ $radius: 10px;
     padding: 0 4px;
   }
 
+  &.gulu-theme-button {
+    &.gulu-level-main {
+      background: $green;
+      color: $white;
+      border-color: $green;
+      &:hover,
+      &:focus {
+        background: darken($green, 10%);
+        border-color: darken($green, 10%);
+      }
+    }
+  }
+  &.gulu-theme-link {
+    &.gulu-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+  &.gulu-theme-text {
+    &.gulu-level-main {
+      color: $green;
+      &:hover,
+      &:focus {
+        color: darken($green, 10%);
+      }
+    }
+    &.gulu-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
 }
 </style>
