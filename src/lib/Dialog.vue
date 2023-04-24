@@ -3,27 +3,35 @@ import Button from './Button.vue'
 
 export default {
   components: {Button},
+  props: {
+    visible: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 
 <template>
-  <div class="gulu-dialog-overlay"></div>
-  <div class="gulu-dialog-wrapper">
-    <div class="gulu-dialog">
-      <header>
-        标题
-        <span class="gulu-dialog-close"></span>
-      </header>
-      <main>
-        <p>第一行</p>
-        <p>第二行</p>
-      </main>
-      <footer>
-        <Button level="main">Ok</Button>
-        <Button>Cancel</Button>
-      </footer>
+  <template v-if="visible">
+    <div class="gulu-dialog-overlay"></div>
+    <div class="gulu-dialog-wrapper">
+      <div class="gulu-dialog">
+        <header>
+          标题
+          <span class="gulu-dialog-close"></span>
+        </header>
+        <main>
+          <p>第一行字</p>
+          <p>第二行字</p>
+        </main>
+        <footer>
+          <Button level="main">OK</Button>
+          <Button>Cancel</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <style lang='scss'>
@@ -73,7 +81,7 @@ $border-color: #d9d9d9;
     padding: 12px 16px;
     text-align: right;
   }
-  
+
   &-close {
     position: relative;
     display: inline-block;
@@ -82,7 +90,7 @@ $border-color: #d9d9d9;
     cursor: pointer;
   }
 
-  &::before, &::after{
+  &::before, &::after {
     content: '';
     position: relative;
     height: 1px;
