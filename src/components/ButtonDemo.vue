@@ -1,4 +1,4 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
   <div>Button 示例</div>
   <h1>示例1</h1>
   <div>
