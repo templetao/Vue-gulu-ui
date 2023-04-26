@@ -24,8 +24,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+$color: #008080;
+
 .topnav {
-  background: pink;
+  color: $color;
   display: flex;
   padding: 16px;
   position: fixed;
